@@ -22,7 +22,7 @@
             android:name="com.dropbox.client2.android.AuthActivity"
             android:launchMode="singleTask" >
             <intent-filter>
-                <data android:scheme="db-APP_KEY" />
+                <data android:scheme="@string/dropbox_key" />
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -33,6 +33,9 @@
             android:enabled="true"
             android:exported="false"
             android:label="Dropbox Sync" />
+        <meta-data
+            android:name="DROPBOX_API_KEY"
+            android:value="@string/dropbox_key"></meta-data>
     </application>
 
 </manifest>

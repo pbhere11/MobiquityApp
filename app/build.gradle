@@ -11,6 +11,8 @@ android {
         versionCode 1
         versionName "1.0"
     }
+    def dropbox_key;
+    def dropbox_app_secret;
     buildTypes {
         release {
             minifyEnabled false
