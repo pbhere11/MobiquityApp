@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.pritesh.mobiquity" >
+    package="com.pritesh.mobiquity">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name=".MainGallery"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,22 +27,21 @@
         <activity android:name="com.dropbox.sync.android.DbxAuthActivity" />
         <activity
             android:name="com.dropbox.client2.android.AuthActivity"
-            android:launchMode="singleTask" >
+            android:launchMode="singleTask">
             <intent-filter>
-                <data android:scheme="@string/dropbox_key" />
+                <data android:scheme="db-5csk32iyklzks48" />
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
         <service
             android:name="com.dropbox.sync.android.DbxSyncService"
             android:enabled="true"
             android:exported="false"
             android:label="Dropbox Sync" />
-        <meta-data
-            android:name="DROPBOX_API_KEY"
-            android:value="@string/dropbox_key"></meta-data>
     </application>
 
 </manifest>
